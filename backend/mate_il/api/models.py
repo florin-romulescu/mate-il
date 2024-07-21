@@ -17,4 +17,4 @@ class Announce(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
     content = models.TextField()
-    create_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
