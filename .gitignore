@@ -1,1 +1,4 @@
+# Toate fisierele de aici vor fi ignorate de catre git
+
 __pycache__
+.env
