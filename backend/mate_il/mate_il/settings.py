@@ -51,6 +51,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'api.exceptions.api_exception_handler'
+}
+
 ROOT_URLCONF = 'mate_il.urls'
 
 TEMPLATES = [
