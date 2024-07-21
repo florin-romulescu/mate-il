@@ -12,3 +12,9 @@ class Post(models.Model):
 
 class Attachment(models.Model):
     attachment = models.FileField(upload_to='files/')
+
+class Announce(models.Model):
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    content = models.TextField()
+    create_at = models.DateTimeField(auto_now_add=True)
