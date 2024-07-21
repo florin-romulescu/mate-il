@@ -17,3 +17,9 @@ html{
 .my-icon{
     color: rgb(253, 34, 34);
 }
+
+#inreg{
+    display: flex;
+    margin-left: auto;
+}
+
