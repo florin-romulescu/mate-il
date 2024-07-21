@@ -1,0 +1,69 @@
+/*facem vizibil iconul de hamburger meniu*/
+
+#hamburger{
+    display:block;
+}
+
+#hamburger>img{
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+/* implicit meniul e ascuns*/
+ul.meniu{
+    display:none;
+    position:absolute;
+}
+
+/*aici facem vizibil meniul cand faem click pe hamburger meniu*/
+#ch-menu:checked+ul.meniu{
+    display: block;
+    z-index: 2;
+    position: relative;
+
+    animation-name: animatie_meniu;
+    animation-iteration-count:1;
+    animation-duration:0.7s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    
+}
+
+
+/*optiunile se intind pe toata latimea containerului*/
+nav ul.meniu li{
+    width:100%;
+}
+
+/*meniul sa vina deasupra continutul de mai jos, fara sa impinga continutul*/
+nav ul.meniu>li ul{
+    position:absolute;
+    width:100%;
+    z-index:200;
+    transform:scale(1,1) !important;
+    opacity: 1 !important;
+}
+
+#ch-menu:checked+ul.meniu>li ul>*{
+    position:relative;
+    z-index:200;
+}
+nav ul.meniu>li:hover>ul{
+    
+    z-index:200;
+    animation:none;
+}
+
+@keyframes animatie_meniu{
+    0%{
+        width:0;
+        opacity:0;
+        transform:scale(0,0); 
+    } 
+    100%{
+    	width:100%;
+        opacity:1;
+        transform:scale(1,1);
+    }
+}
+

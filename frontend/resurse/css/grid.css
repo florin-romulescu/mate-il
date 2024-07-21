@@ -1,0 +1,95 @@
+#grid-pagina {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "prezentare prezentare prezentare prezentare"
+                         "anunturi anunturi anunturi anunturi"
+                         "continut continut continut continut";
+}
+
+html {
+    font-size: 18px;
+}
+
+#grid-pagina > * {
+    border: 2px solid black;
+    padding: 1em;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adăugarea umbrei */
+    transition: font-size 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Tranziție pentru umbră și culoare de fundal */
+}
+
+#grid-pagina > *:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Accentuează umbra la hover */
+    background-color: aqua; /* Schimbă culoarea de fundal la hover */
+    cursor: pointer;
+    font-size: 110%;
+}
+
+#prezentare {
+    grid-area: prezentare;
+    text-decoration: none;
+    color: black;
+}
+
+#anunturi {
+    grid-area: anunturi;
+    text-decoration: none;
+    color: black;
+}
+
+#continut {
+    grid-area: continut;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 1250px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .videos, .buttons {
+        width: 75%; /* Lățimea fiecărui element este de 75% din lățimea containerului */
+        box-sizing: border-box; /* Asigură că padding-ul este inclus în lățimea elementului */
+    }
+
+    .videos {
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #grid-pagina {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "prezentare prezentare"
+                             "anunturi anunturi"
+                             "continut continut";
+    }
+
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /* #grid-pagina {
+        display: block;
+    } */
+
+    html {
+        font-size: 12px;
+    }
+
+    #grid-pagina > * {
+        border-radius: 0;
+    }
+}
+
+/* @media screen and (max-width: 650px) {
+    .container {
+        flex-direction: column;
+    }
+} */

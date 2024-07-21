@@ -1,0 +1,101 @@
+nav{
+    --inaltime-buton: 2.5em;
+    --latime-buton:155px;
+
+    background-color: black;
+   
+    margin: 0;
+    width: calc(100vw - 13px);
+    margin-left: calc(-1 * var(--spatiere-pagina));
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index:50;
+}
+
+#hamburger, #ch-menu{
+    display: none;
+}
+
+.meniu ul{
+    display: none;
+}
+
+.meniu{
+    display: flex;
+}
+
+.meniu, .meniu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.meniu li{
+    border: 1px;
+    width: var(--latime-buton);
+    height: var(--inaltime-buton);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.meniu li div, .meniu li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    line-height: var(--inaltime-buton);
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+}
+
+.meniu li:hover div, .meniu li:hover a{
+    background-color: black;
+    font-size: 110%;
+}
+
+
+.meniu > li > ul > li a:hover {
+    background-color: aqua;
+    color: black;
+}
+
+.meniu li:hover>ul{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: center top;
+}
+
+/* submeniu */
+.meniu ul{
+    display: none;
+    animation: animatie_submeniu 0.5s linear 1 forwards;
+}
+
+#acasa-mediu{
+    display: none;
+}
+
+@media  screen and (max-width: 1300px) {
+    .meniu > li > ul > li a {
+        width: 90%;
+    }
+}
+
+@media  screen and (max-width: 1200px) {
+    .meniu > li > ul > li a {
+        width: 80%;
+    }
+}
+
+@keyframes animatie_submeniu {
+    100%{
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}

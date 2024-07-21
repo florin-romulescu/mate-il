@@ -1,0 +1,19 @@
+body{
+
+    --spatiere-pagina:50px;
+    --dim-spatiere: 40px;
+
+    padding-left: var(--dim-spatiere);
+    padding-right: var(--dim-spatiere);
+}
+
+
+html{
+    /* font-family: "Pangolin", cursive; */
+    font-weight: 400;
+    font-style: normal;
+}
+
+.my-icon{
+    color: rgb(253, 34, 34);
+}
