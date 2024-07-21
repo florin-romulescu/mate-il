@@ -9,3 +9,6 @@ class Post(models.Model):
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     attachments = models.ManyToManyField('Attachment', blank=True)
     external_url = models.URLField(blank=True, null=True)
+
+class Attachment(models.Model):
+    attachment = models.FileField(upload_to='files/')
