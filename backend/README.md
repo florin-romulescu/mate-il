@@ -15,6 +15,7 @@ pip3 install -r requirements.txt
 python3 mate_il/manage.py runserver 5000
 ```
 
+
 ### Endpointuri
 
 - GET /posts/
