@@ -5,7 +5,7 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ['id', 'title', 'author', 'description',
-                  'created_at', 'image', 'attachments',
+                  'created_at', 'image', 'has_attachment',
                   'external_url']
 
 class AnnounceSerializer(serializers.ModelSerializer):
