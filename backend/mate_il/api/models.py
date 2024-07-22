@@ -12,7 +12,7 @@ class Post(models.Model):
 
     @property
     def has_attachment(self):
-        return self.attachments is not None
+        return self.attachments.exists()
 
 class Attachment(models.Model):
     attachment = models.FileField(upload_to='files/')
