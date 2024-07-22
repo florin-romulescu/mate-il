@@ -10,6 +10,10 @@ class Post(models.Model):
     attachments = models.ManyToManyField('Attachment', blank=True)
     external_url = models.URLField(blank=True, null=True)
 
+    @property
+    def has_attachment(self):
+        return self.attachments is not None
+
 class Attachment(models.Model):
     attachment = models.FileField(upload_to='files/')
 
