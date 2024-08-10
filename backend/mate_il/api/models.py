@@ -9,6 +9,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     attachments = models.ManyToManyField('Attachment', blank=True)
     external_url = models.URLField(blank=True, null=True)
+    tags = models.ManyToManyField('Tag', blank=True)
 
     @property
     def has_attachment(self):
@@ -22,3 +23,10 @@ class Announce(models.Model):
     author = models.CharField(max_length=255)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+class Tag(models.Model):
+    name = models.CharField(max_length=255)
+    posts = models.ManyToManyField('Post', blank=True)
+
+    def __str__(self):
+        return self.name
