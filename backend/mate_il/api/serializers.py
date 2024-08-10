@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Post, Announce
+from .models import Post, Announce, Tag
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,4 +12,9 @@ class AnnounceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Announce
         fields = ['id', 'title', 'author', 'content', 'created_at']
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ['id', 'name']
         
